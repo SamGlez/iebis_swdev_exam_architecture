@@ -1,21 +1,43 @@
-public class User {
+public final class User {
 
-    enum Gender {Male, Female};
-    String name;
-    String emailAddress;
-    int age;
-    String address;
-    String city;
-    String zipCode;
-    Gender gender;
+    private final String name;
+    private final String emailAddress;
+    private final int age;
+    private final String address;
+    private final String city;
+    private final String zipCode;
 
-    public User(String name, String emailAddress, int age, String address, String city, String zipCode, Gender gender) {
-        this.name = name;
-        this.emailAddress = emailAddress;
-        this.age = age;
-        this.address = address;
-        this.city = city;
-        this.zipCode = zipCode;
-        this.gender = gender;
+    private User(Builder builder) {
+        this.name = builder.name;
+        this.emailAddress = builder.emailAddress;
+        this.age = builder.age;
+        this.address = builder.address;
+        this.city = builder.city;
+        this.zipCode = builder.zipCode;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmailAddress() {
+        return emailAddress;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
 }

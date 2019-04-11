@@ -9,7 +9,8 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        User angelica = new User("Angelica", "", 23, "", "", "", User.Gender.Female);
+        // Crear con el Builder
+        // User angelica = new User("Angelica", "", 23, "", "", "");
 
         Show gameThrones = new Show("Game of Thrones"); // The argument is the name of the TV Show
         Season gtSeason1 = new Season(1); // The argument is the number of the season
@@ -29,6 +30,8 @@ public class Main {
         Episode episodeExtra = new Episode(3000, "The making of Season 1"); // 3000 -> length of the episode in seconds(int), and Title of the episode
         gtSeason1.addEpisode(episodeExtra);
 
+        // Notification subscription
+        // Message to angelica
         // Because of the new episode added Angelica should receive a notification (for simplicity just print out the message in the console)
 
         // Fearing a leak of episodes HBO releases the whole season overnight
@@ -38,6 +41,10 @@ public class Main {
         gameThrones.addSeason(gtSeason2);
 
         // Because of the full season added Angelica should receive a whole set of notifications regarding season 2
+        //Angelica, the episode The making of Season 1 from the TV Show Game of Thrones is available
+        //------------- One year has passed -------------
+        //Angelica, the episode The North remembers from the TV Show Game of Thrones is available
+        //todo el resto de episodios
     }
 
 
