@@ -1,10 +1,19 @@
 public class Episode {
+    private int length;
+    private String name;
+    private String show;
 
-    int time;
-    String name;
-
-    public Episode(int time, String name){
-        this.time = time;
+    public Episode(int length, String name) {
+        this.length = length;
         this.name = name;
+        show = "Game of Thrones";
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getShow() {
+        return show;
     }
 }

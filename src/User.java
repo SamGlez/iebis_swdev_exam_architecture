@@ -1,43 +1,28 @@
-public final class User {
+public class User implements Subscriber {
 
-    private final String name;
-    private final String emailAddress;
-    private final int age;
-    private final String address;
-    private final String city;
-    private final String zipCode;
-
-    private User(Builder builder) {
-        this.name = builder.name;
-        this.emailAddress = builder.emailAddress;
-        this.age = builder.age;
-        this.address = builder.address;
-        this.city = builder.city;
-        this.zipCode = builder.zipCode;
+    @Override
+    public void update(Object object) {
+        Episode episode = (Episode) object;
+        System.out.println(name + ", the episode " + episode.getName() + " from the TV show " + episode.getShow() + " is available " );
     }
 
-    public String getName() {
-        return name;
-    }
+    enum Gender {Male, Female};
+    String name;
+    String emailAddress;
+    int age;
+    String address;
+    String city;
+    String zipCode;
+    Gender gender;
 
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getZipCode() {
-        return zipCode;
+    public User(String name, String emailAddress, int age, String address, String city, String zipCode, Gender gender) {
+        this.name = name;
+        this.emailAddress = emailAddress;
+        this.age = age;
+        this.address = address;
+        this.city = city;
+        this.zipCode = zipCode;
+        this.gender = gender;
     }
 
 }
